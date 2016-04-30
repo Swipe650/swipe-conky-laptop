@@ -26,7 +26,6 @@ default_outline_color green
 alignment top_right
 #alignment bottom_right
 gap_x 10
-#gap_y 230
 gap_y 10
 no_buffers yes
 uppercase no
@@ -40,7 +39,7 @@ TEXT
 ${alignc -10}${font Open Sans:size=20}${color dodgerblue3}Antergos ${color}Linux$font$color
 #${alignc -10}${image ~/.conky/ant -p 5,10 -s 40x40 -f 1}${font Open Sans:size=20}${color dodgerblue3}Antergos ${color}Linux$font$color
 
-${voffset 4}$color${font}${font Open Sans:size=15}$alignr${voffset -15}${time %H:%M}$font
+${voffset 4}$color${font}${font Open Sans:bold:size=15}$alignr${voffset -15}${time %H:%M}$font
 ${voffset -4}${color dodgerblue3}${font Open Sans:Bold:size=10}DATE ${hr 5}$color$font
 ${voffset 4}$color${font Open Sans:size=12}$alignc${time %A}, ${time %d %B %Y}$font$color
 
