@@ -73,9 +73,10 @@ $color${font Open Sans:bold:size=8.5}Free:$font $swapfree
 
 # CPU
 ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}CPU ${cpubar 4}
-$color${font}Intel® Core™ i5-5250U @ ${freq_g cpu0}GHz $alignr $cpu% @ ${execi 2 sensors | grep 'Physical id 0' | cut -c18-19}°C
-${font}Core 0 - ${execi 2 sensors | grep 'Core 0' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu1}${color}
-${font}Core 1 - ${execi 2 sensors | grep 'Core 1' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu2}${color}
+$color${font}Intel Core2 Duo T7500 @ ${freq_g cpu0}GHz $alignr $cpu%
+#@ ${execi 2 sensors | grep 'Physical id 0' | cut -c16-21}°C
+${font}Core 0 - ${execi 2 sensors | grep 'Core 0' | cut -c16-21}°C ${alignc 60}${color dodgerblue3}${cpubar cpu1}${color}
+${font}Core 1 - ${execi 2 sensors | grep 'Core 1' | cut -c16-21}°C ${alignc 60}${color dodgerblue3}${cpubar cpu2}${color}
 #${font}Core 2 - ${execi 2 sensors | grep 'Core 0' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu3}${color}
 #${font}Core 3 - ${execi 2 sensors | grep 'Core 1' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu4}${color}
 #${font}CPU Fan Speed - ${execi 2 sensors | grep 'fan2' | cut -c24-31} ${alignc 60}
