@@ -128,4 +128,4 @@ ${fs_bar /}
 #$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}HOME$font${alignc -20}${fs_used /home} / ${fs_size /home}$alignr ${fs_used_perc /home} %
 #${color aaddff}write: ${diskio_write /dev/sda}${color 66aaff}${alignc -20} read:${diskio_read /dev/sda} $color$alignr ${fs_type /home}
 #${fs_bar /home}
-${voffset -200}
+${voffset -160}
