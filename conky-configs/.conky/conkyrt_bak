@@ -38,7 +38,7 @@ override_utf8_locale yes
 TEXT
 
 # RADIOTRAY
-${voffset -6}${font Open Sans:Bold:size=10}${color dodgerblue3}RADIO ${hr 5}${if_running radiotray}
+${voffset -10}${font Open Sans:Bold:size=10}${color dodgerblue3}RADIO ${hr 5}${if_running radiotray}
 
 ${voffset -8}${color}${if_match "${execi 10 /home/swipe/.conky/conkyradiotray/scriptradio}" == "NO"}${color #efefef}${font Open Sans:size=10:bold}Radiotray is not playing${else}${color #efefef}${font Open Sans:size=10.5:bold}RadioTray is playing:
 ${voffset 10}${color aaaaaa}${font Open Sans:size=10:bold}Station:${font}${color}  
@@ -47,7 +47,7 @@ ${font Open Sans:size=9:bold}${color #ffffff}${execi 10 qdbus net.sourceforge.ra
 
 ${voffset 16}${color aaaaaa}${font Open Sans:size=10:bold}Artist & Title:${font}${color}   
 
-${font Open Sans:size=9:bold}${color #ffffff}${execi 10 /home/swipe/.conky/conkyradiotray/noinfo| fold -s -w 45}}${color}${image ~/.local/share/radiotray/icon -p 105,60 -s 110x110 -f 1}${endif} 
+${font Open Sans:size=9:bold}${color #ffffff}${execi 10 /home/swipe/.conky/conkyradiotray/noinfo| fold -s -w 35}${color}${image ~/.local/share/radiotray/icon -p 105,55 -s 110x110 -f 1}${endif}
 $else${color #696969}${font Open Sans:size=10:bold}No activity${font}$endif
 ${voffset 150}${exec /home/swipe/.conky/conkyradiotray/scriptradioart}
-${voffset -200}
+${voffset -215}
