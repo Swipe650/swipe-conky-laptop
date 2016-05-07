@@ -35,7 +35,6 @@ override_utf8_locale yes
 #use_spacer no
  
 TEXT
-
 ${alignc -10}${font Open Sans:size=20}${color dodgerblue3}Antergos ${color}Linux$font$color
 #${alignc -10}${image ~/.conky/ant -p 5,10 -s 40x40 -f 1}${font Open Sans:size=20}${color dodgerblue3}Antergos ${color}Linux$font$color
 
@@ -128,4 +127,8 @@ ${fs_bar /}
 #$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}HOME$font${alignc -20}${fs_used /home} / ${fs_size /home}$alignr ${fs_used_perc /home} %
 #${color aaddff}write: ${diskio_write /dev/sda}${color 66aaff}${alignc -20} read:${diskio_read /dev/sda} $color$alignr ${fs_type /home}
 #${fs_bar /home}
-${voffset -160}
+
+# PACMAN UPDATES
+${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}UPDATES ${hr 5}
+$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}${execpi 600 checkupdates | wc -l}
+${voffset -180}
