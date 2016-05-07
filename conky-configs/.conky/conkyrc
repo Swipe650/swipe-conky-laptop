@@ -127,8 +127,12 @@ ${fs_bar /}
 #$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}HOME$font${alignc -20}${fs_used /home} / ${fs_size /home}$alignr ${fs_used_perc /home} %
 #${color aaddff}write: ${diskio_write /dev/sda}${color 66aaff}${alignc -20} read:${diskio_read /dev/sda} $color$alignr ${fs_type /home}
 #${fs_bar /home}
-
+#
 # PACMAN UPDATES
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}UPDATES ${hr 5}
-$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}${execpi 600 checkupdates | wc -l}
-${voffset -180}
+#${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}UPDATES ${hr 5}
+#$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}${execpi 600 checkupdates | wc -l}
+
+# BATTERY
+${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}BATTERY ${hr 5}
+$color${font Open Sans:bold:size=10}Status: ${voffset 3} $alignc${battery_bar 4,225 C23B} ${voffset -3}${font Open Sans:size=8.5}${battery_percent C23B}%
+${voffset -175}
