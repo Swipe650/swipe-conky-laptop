@@ -48,7 +48,7 @@ ${voffset -8}
 $sysname $kernel $alignr $machine
 Uptime: $alignr $uptime
 #Last System Update:$alignr${execi 60 sh ~/bin/pacman-date.sh}
-GPU Temperature $alignr ${execi 30 sensors | grep 'temp1:' | cut -c16-17}°C
+System Temp: $alignr ${execi 30 sensors | grep 'temp1:' | cut -c16-17}°C
 
 # MEMORY
 ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}MEMORY ${membar 4} 
