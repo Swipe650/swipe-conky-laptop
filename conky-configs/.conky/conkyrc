@@ -56,7 +56,7 @@ $color${font Open Sans:bold:size=8.5}Used:$font $mem of $memmax$alignr$memperc%
 $color${font Open Sans:bold:size=8.5}Free:$font $memeasyfree
 $color${font Open Sans:bold:size=8.5}Buffers / Cached:$font$alignr$buffers / $cached
 
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ------------------------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}CPU${color}${font}${voffset -2} --
+${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} -------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}CPU${color}${font}${voffset -2} --
 
 ${voffset -8}${top_mem name 1}${alignr}${top_mem cpu 1} %
 ${voffset -13}${alignr}${offset -60}${top_mem mem 1} %
@@ -81,7 +81,7 @@ ${font}Core 1 - ${execi 2 sensors | grep 'Core 1' | cut -c16-21}°C ${alignc 60}
 #${font}Core 3 - ${execi 2 sensors | grep 'Core 1' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu4}${color}
 #${font}CPU Fan Speed - ${execi 2 sensors | grep 'fan2' | cut -c24-31} ${alignc 60}
 
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ------------------------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}CPU${color}${font}${voffset -2} --
+${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} -------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}CPU${color}${font}${voffset -2} --
 
 ${voffset -8}#${hr 1}
 ${top name 1}${alignr}${top cpu 1} %
@@ -120,18 +120,14 @@ ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}DISCS ${voffset -
 ${voffset -14}
 $color${font Open Sans:bold:size=9}/dev/sda${font Open Sans:size=8.5}${alignc -50}${color} write: ${color 66aaff}${font Open Sans:bold:size=8.5}${diskio_write /dev/sda}${color}$alignr ${font Open Sans:size=8.5}$alignr read: ${color 66aaff}${font Open Sans:bold:size=8.5}$alignr${diskio_read /dev/sda}
 ${voffset -8}
-$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}ROOT$font${alignc -20}${fs_used /} / ${fs_size /}$alignr ${fs_used_perc /} %
-${voffset 3}Used: ${fs_bar 4 /}
+$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}Root Partition:$font${alignr -5}${fs_used /} / ${fs_size /} 
+$color${font Open Sans:size=8.5}${voffset 3}Used:  ${voffset 3}$alignr${fs_bar 4, 245 /} ${voffset -3}${fs_used_perc /}%
 #${voffset -8}
-#$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}HOME$font${alignc -20}${fs_used /home} / ${fs_size /home}$alignr ${fs_used_perc /home} %
+#$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}HOME$font${alignc -20}${fs_used /home} / ${fs_size /home}$alignr${fs_used_perc /home} %
 #${color aaddff}write: ${diskio_write /dev/sda}${color 66aaff}${alignc -20} read:${diskio_read /dev/sda} $color$alignr $fs_type /home}
 #${fs_bar /home}
-#
-# PACMAN UPDATES
-#${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}UPDATES ${voffset -1}${hr 6}
-#$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}${execpi 600 checkupdates | wc -l}
 
 # BATTERY
 ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}BATTERY ${voffset -1}${hr 6}
-$color${font Open Sans:size=10}Status: ${voffset 3} $alignc${battery_bar 4,225 C23B} ${voffset -3}${font Open Sans:size=8.5}${battery_percent C23B}%
+$color${font Open Sans:size=8.5}Status: ${voffset 3} $alignr${battery_bar 4,245 C23B} ${voffset -3}${battery_percent C23B}%
 ${voffset -175}
