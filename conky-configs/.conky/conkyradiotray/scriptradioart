@@ -5,6 +5,7 @@ lbc_london='LBC London'
 plan_rock='Planet Rock'
 kfi='KFI'
 twit='TWiT.am'
+ragga='Raggakings'
 fivelive='5live'
 radiofour='Radio 4'
 radiofourextra='Radio 4 Extra'
@@ -14,7 +15,7 @@ soma='Space Station Soma'
 crl='Classic Rock Lounge'
 pingrad='Pinguin Radio'
 hr80s='Hard Rockin 80s'
-tr='Team Rock Radio'
+talkradio='TalkRadio'
 
 station=${st}
 
@@ -34,8 +35,8 @@ case "$station" in
     "$twit" )
         cp -f /home/swipe/.local/share/radiotray/twit  /home/swipe/.local/share/radiotray/icon
 ;;
-    "$tr" )
-        cp -f /home/swipe/.local/share/radiotray/tr  /home/swipe/.local/share/radiotray/icon
+    "$ragga" )
+        cp -f /home/swipe/.local/share/radiotray/ragga  /home/swipe/.local/share/radiotray/icon
 ;;
     "$fivelive" )
         cp -f /home/swipe/.local/share/radiotray/5live  /home/swipe/.local/share/radiotray/icon
@@ -55,11 +56,14 @@ case "$station" in
     "$crl" )
         cp -f /home/swipe/.local/share/radiotray/crl  /home/swipe/.local/share/radiotray/icon
 ;;
+    "$pingrad" )
+        cp -f /home/swipe/.local/share/radiotray/pingrad  /home/swipe/.local/share/radiotray/icon
+;;
     "$hr80s" )
         cp -f /home/swipe/.local/share/radiotray/hr80s  /home/swipe/.local/share/radiotray/icon
 ;;
-    "$pingrad" )
-        cp -f /home/swipe/.local/share/radiotray/pingrad  /home/swipe/.local/share/radiotray/icon
+    "$talkradio" )
+        cp -f /home/swipe/.local/share/radiotray/talkradio  /home/swipe/.local/share/radiotray/icon
 ;;
     "$radio_paradise" )
 ;;
