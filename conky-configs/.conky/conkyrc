@@ -104,7 +104,7 @@ ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}NETWORK ${voffset
 #$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 sh /home/swipe/.conky/IP.sh}$font
 $color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 curl ifconfig.me}$font 
 
-${voffset -15}$alignc${execpi 4 echo "\${font Open Sans:bold:size=8.5}\${color #66aaff}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
+${voffset -28}$alignc${execpi 4 echo "\${font Open Sans:bold:size=8.5}\${color #66aaff}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 #${voffset -10}${font Open Sans:bold:size=8.5}Ethernet $font$alignr ${addr enp0s25}
 #↑ ${upspeedf enp0s25} kb/s $alignr ${totalup enp0s25}
 #${voffset -14}$alignc${upspeedgraph enp0s25 10,120  000000 aaddff}
