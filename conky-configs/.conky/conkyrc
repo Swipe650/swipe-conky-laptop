@@ -7,10 +7,11 @@ total_run_times 0
 own_window yes
 #own_window_type normal
 own_window_type dock
+#own_window_type desktop
 own_window_transparent no
 own_window_argb_visual yes
 #own_window_argb_value 60
-own_window_argb_value 150
+own_window_argb_value 110
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 #own_window_hints decorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
@@ -102,7 +103,7 @@ ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}NETWORK ${voffset
 #$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 60 curl http://ip.tupeux.com --connect-timeout 2 | 
 #grep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"}$font
 #$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 sh /home/swipe/.conky/IP.sh}$font
-$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 curl ifconfig.me}$font 
+$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 curl ifconfig.co --connect-timeout 2}$font 
 
 ${voffset -28}$alignc${execpi 4 echo "\${font Open Sans:bold:size=8.5}\${color #66aaff}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 #${voffset -10}${font Open Sans:bold:size=8.5}Ethernet $font$alignr ${addr enp0s25}
@@ -136,4 +137,4 @@ $color${font Open Sans:size=8.5}${voffset 3}Used:  ${voffset 3}$alignr${fs_bar 4
 # BATTERY
 ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}BATTERY ${voffset -1}${hr 6}
 $color${font Open Sans:size=8.5}Status: ${voffset 3} $alignr${battery_bar 4,245 C23B} ${voffset -3}${battery_percent C23B}%
-${voffset -175}
+${voffset -190}
