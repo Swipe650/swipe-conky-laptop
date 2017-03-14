@@ -43,13 +43,14 @@ ${if_running radiotray}
 ${voffset -20}${font Open Sans:Bold:size=10}${color dodgerblue3}RADIO ${hr 5}${if_running radiotray}
 
 ${voffset -14}${color}${if_match "${execi 10 /home/swipe/.conky/conkyradiotray/scriptradio}" == "NO"}${color #efefef}${font Open Sans:size=10:bold}Radiotray is not playing${else}${color #efefef}${font Open Sans:size=10.5:bold}RadioTray is playing:
-${voffset 20}${color aaaaaa}${font Open Sans:size=10:bold}Station:${font}${color}  
+${voffset 10}${color aaaaaa}${font Open Sans:size=10:bold}Station:${font}${color}  
 
 ${font Open Sans:size=9:bold}${color #ffffff}${execi 10 qdbus net.sourceforge.radiotray /net/sourceforge/radiotray net.sourceforge.radiotray.getCurrentRadio} 
 
-${voffset 15}${color aaaaaa}${font Open Sans:size=10:bold}Artist & Title:${font}${color}   
+${voffset 16}${color aaaaaa}${font Open Sans:size=10:bold}Artist & Title:${font}${color}
+#${execi 10 qdbus net.sourceforge.radiotray /net/sourceforge/radiotray getCurrentMetaData| fold -s -w80 > /home/swipe/.conky/conkyradiotray/artist_title.txt}
 
 ${font Open Sans:size=9:bold}${color #ffffff}${execi 10 /home/swipe/.conky/conkyradiotray/noinfo| fold -s -w 40}${color}${image ~/.local/share/radiotray/icon -p 125,55 -s 110x110 -f 1}${endif}
 $else${color #696969}${font Open Sans:size=10:bold}No activity${font}$endif
-${voffset 150}${exec /home/swipe/.conky/conkyradiotray/scriptradioart}
+${voffset 150}${execi 10 /home/swipe/.conky/conkyradiotray/scriptradioart}
 ${voffset -220}
