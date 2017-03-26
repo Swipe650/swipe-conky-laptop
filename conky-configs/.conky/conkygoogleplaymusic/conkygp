@@ -11,7 +11,7 @@ own_window_type normal
 #own_window_type desktop
 own_window_transparent no
 own_window_argb_visual yes
-own_window_argb_value 100
+own_window_argb_value 120
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 #own_window_hints decorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
@@ -42,17 +42,16 @@ override_utf8_locale yes
 
 TEXT
 
-# GDMP (if you want it to become invisible when not playing uncomment the line below and last line and comment out the penultimate line. Then set own_window_argb_value 0.
-#{if_running Google Play Music Desktop Player}
-${voffset -5}${color #efefef}${font Open Sans:size=10:bold}${alignr 140}${execi 10 cat "$HOME/.config/Google Play Music Desktop Player/json_store/playback.json" | jq -r '.song.title'}
+# GDMP 
+${if_match "${exec pidof 'Google Play Music Desktop Player' }" != ""}${voffset 0}${color #efefef}${font Open Sans:size=9:bold}${alignr 140}${execi 10 cat "$HOME/.config/Google Play Music Desktop Player/json_store/playback.json" | jq -r '.song.title' | cut -c1-26}
 
 ${voffset -5}${color #FFC433}${font Open Sans:size=8}${alignr 140}${execi 10 cat "$HOME/.config/Google Play Music Desktop Player/json_store/playback.json" | jq -r '.song.artist'}
 
-${voffset -5}${color #efefef}${font Open Sans:size=8:italic}${alignr 140}${execi 10 cat "$HOME/.config/Google Play Music Desktop Player/json_store/playback.json" | jq -r '.song.album'}
+${voffset -7}${color #efefef}${font Open Sans:size=8:italic}${alignr 140}${execi 10 cat "$HOME/.config/Google Play Music Desktop Player/json_store/playback.json" | jq -r '.song.album' | cut -c1-35}
 
-${voffset 10}${font Open Sans:size=9:bold}${color #aaaaaa}${alignr 140}${execi 10 ~/.conky/conkygoogleplaymusic/albumart | sed ':a;N;$!ba;s/\n/ \- /' | fold -s -w 35}
+${voffset 10}${font Open Sans:size=9:bold}${color #aaaaaa}${alignr 140}${execi 10 ~/.conky/conkygoogleplaymusic/albumart}
 ${image ~/.conky/conkygoogleplaymusic/gmdmp_art -p 175,5 -s 120x120}
 
 ${voffset -70}${font Open Sans:size=9:bold}${color #aaaaaa}${alignr 140}${exec ~/.conky/conkygoogleplaymusic/time}
-${voffset -70}#${endif}
-#${voffset -70}$else${voffset -120}${endif}
+${voffset -68}$else${font Open Sans:size=10:bold}${alignr 140}Google Play Music ${image ~/.conky/conkygoogleplaymusic/GPM -p 175,5 -s 120x120}
+${font Open Sans:size=10:bold}${alignc 50}Not Playing ${voffset 83}${endif}
