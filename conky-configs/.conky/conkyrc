@@ -11,7 +11,7 @@ own_window_type dock
 own_window_transparent no
 own_window_argb_visual yes
 #own_window_argb_value 60
-own_window_argb_value 110
+own_window_argb_value 120
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 #own_window_hints decorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
@@ -38,12 +38,12 @@ override_utf8_locale yes
 #use_spacer no
  
 TEXT
-${alignc -10}${font Open Sans:size=20}${color dodgerblue3}Antergos ${color}Linux$font$color
-#${alignc -10}${image ~/.conky/ant -p 5,10 -s 40x40 -f 1}${font Open Sans:size=20}${color dodgerblue3}Antergos ${color}Linux$font$color
+${alignc -10}${font Open Sans:Bold:size=20}${color dodgerblue3}Arch ${color}Linux$font$color
+#${alignc -10}${image ~/.conky/ant -p 5,10 -s 40x40 -f 1}${font Open Sans:size=20}${color dodgerblue3}Arch ${color}Linux$font$color
 
-${voffset 4}$color${font}${font Open Sans:bold:size=15}$alignr${voffset -15}${time %H:%M}$font
-${voffset -4}${color dodgerblue3}${font Open Sans:Bold:size=10}DATE ${voffset -1}${hr 6}$color$font
-${voffset 4}$color${font Open Sans:size=12}$alignc${time %A}, ${time %d %B %Y}$font$color
+${voffset -10}${color dodgerblue3}${font Open Sans:Bold:size=10}DATE ${voffset -1}${hr 6}$color$font
+${voffset 4}$color${font Open Sans:size=12}${time %A}, ${time %d %B %Y}$font$color
+${voffset 4}$color${font}${font Open Sans:bold:size=15}$alignr${voffset -27}${time %H:%M}$font
 
 # SYSTEM
 ${voffset -12}${font Open Sans:Bold:size=10}${color dodgerblue3}SYSTEM ${voffset -1}${hr 6}$color${font}
@@ -59,7 +59,7 @@ $color${font Open Sans:bold:size=8.5}Used:$font $mem of $memmax$alignr$memperc%
 $color${font Open Sans:bold:size=8.5}Free:$font $memeasyfree
 $color${font Open Sans:bold:size=8.5}Buffers / Cached:$font$alignr$buffers / $cached
 
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} -------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}CPU${color}${font}${voffset -2} --
+${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ----------------------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -4}CPU${color}${font}${voffset -2} --
 
 ${voffset -8}${top_mem name 1}${alignr}${top_mem cpu 1} %
 ${voffset -13}${alignr}${offset -60}${top_mem mem 1} %
@@ -82,9 +82,9 @@ ${font}Core 0 - ${execi 2 sensors | grep 'Core 0' | cut -c16-21}°C ${alignc 60}
 ${font}Core 1 - ${execi 2 sensors | grep 'Core 1' | cut -c16-21}°C ${alignc 60}${cpubar cpu2}${color}
 #${font}Core 2 - ${execi 2 sensors | grep 'Core 0' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu3}${color}
 #${font}Core 3 - ${execi 2 sensors | grep 'Core 1' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu4}${color}
-#${font}CPU Fan Speed - ${execi 2 sensors | grep 'fan2' | cut -c24-31} ${alignc 60}
+#${font}CPU Fan Speed - ${execi 2 sensors | grep 'fan0' | cut -c24-31} ${alignc 60}
 
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} -------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------ ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}CPU${color}${font}${voffset -2} --
+${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ----------------------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -4}CPU${color}${font}${voffset -2} --
 
 ${voffset -8}#${hr 1}
 ${top name 1}${alignr}${top cpu 1} %
@@ -103,7 +103,7 @@ ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}NETWORK ${voffset
 #$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 60 curl http://ip.tupeux.com --connect-timeout 2 | 
 #grep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"}$font
 #$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 sh /home/swipe/.conky/IP.sh}$font
-$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 curl ifconfig.co --connect-timeout 2}$font 
+$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 curl ifconfig.co}$font 
 
 ${voffset -28}$alignc${execpi 4 echo "\${font Open Sans:bold:size=8.5}\${color #66aaff}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 #${voffset -10}${font Open Sans:bold:size=8.5}Ethernet $font$alignr ${addr enp0s25}
@@ -137,4 +137,4 @@ $color${font Open Sans:size=8.5}${voffset 3}Used:  ${voffset 3}$alignr${fs_bar 4
 # BATTERY
 ${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}BATTERY ${voffset -1}${hr 6}
 $color${font Open Sans:size=8.5}Status: ${voffset 3} $alignr${battery_bar 4,245 C23B} ${voffset -3}${battery_percent C23B}%
-${voffset -190}
+${voffset -215}
