@@ -25,9 +25,9 @@ then
 #title='radiotray icon'
 title='hashtag/radiotray'
 #title='black'
-#elif [ "$cadena" = "$rp" ]; 
-#then 
-#station='Radio Paradise'  
+elif [ "$cadena" = "$rp" ]; 
+then 
+station='Radio Paradise'  
 else 
 title=$so 
 fi
@@ -77,8 +77,12 @@ case "$station" in
 ;;
     "$ragga" )
         convert ~/.local/share/radiotray/ragga -resize 130 ~/.local/share/radiotray/icon
-#;;
-    #"$radio_paradise" )
+;;
+    "$radio_paradise" )
+        curl -o ~/.local/share/radiotray/now.xml http://radioparadise.com/xml/now.xml
+        art=$(awk -F '[<>]' '/coverart/{print $3}' ~/.local/share/radiotray/now.xml)
+        wget -O ~/.local/share/radiotray/rp_art "$art"
+        convert ~/.local/share/radiotray/rp_art -resize 130 ~/.local/share/radiotray/icon
 ;;
     "$not_playing" )
 ;;
@@ -86,7 +90,7 @@ case "$station" in
         #cp -f ~/.local/share/radiotray/radiotray  ~/.local/share/radiotray/icon
         wget -qO miniatureGoogleImage "$linkMiniature"
         #convert ~/bin/miniatureGoogleImage ~/.local/share/radiotray/icon
-        convert ~/bin/miniatureGoogleImage -resize 120 ~/.local/share/radiotray/icon
+        convert ~/bin/miniatureGoogleImage -resize 130 ~/.local/share/radiotray/icon
 ;;
 esac
 
