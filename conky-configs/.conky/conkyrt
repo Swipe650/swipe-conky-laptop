@@ -17,7 +17,7 @@ double_buffer yes
 
 #maximum_height 200
 width 210
-minimum_size 240
+minimum_size 270
 draw_shades no
 draw_outline no
 draw_borders no
@@ -52,7 +52,7 @@ ${font Open Sans:size=9:bold}${color #ffffff}${execi 10 qdbus net.sourceforge.ra
 
 ${voffset 16}${color #FFC433}${font Open Sans:size=10:bold}Artist & Title:${font}${color}
 
-${font Open Sans:size=9:bold}${color #ffffff}${execi 10 /home/swipe/.conky/conkyradiotray/noinfo| fold -s -w 40}${color}${image ~/.local/share/radiotray/icon -p 125,35 -s 110x110 -f 1}${endif}
+${font Open Sans:size=9:bold}${color #ffffff}${execi 10 /home/swipe/.conky/conkyradiotray/noinfo| fold -s -w 40}${color}${image ~/.local/share/radiotray/icon -p 125,35 -f 1}${endif}
 $else${color #696969}${font Open Sans:size=10:bold}No activity${font}$endif
 ${voffset 150}${execi 10 /home/swipe/.conky/conkyradiotray/scriptradioart}
 ${voffset -220}
