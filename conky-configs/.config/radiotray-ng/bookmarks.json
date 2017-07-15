@@ -88,6 +88,7 @@
                 "image": "~/.config/radiotray-ng/bookmark_icons/kfi", 
                 "name": "KFI"
             }
+
         ]
     }, 
     {
@@ -282,6 +283,11 @@
         "image": "", 
         "group": "Oldies", 
         "stations": [
+            {   
+                "url": "http://lin2.ash.fast-serv.com:9022/listen.pls",
+                "image": "~/.config/radiotray-ng/bookmark_icons/oldtimeradio",
+                "name" : "Antioch Old Time Radio"
+            },
             {
                 "url": "http://lin2.ash.fast-serv.com:9022/listen.pls", 
                 "image": "", 
