@@ -21,7 +21,7 @@
             {
                 "url": "http://stream.indiebrew.net:8000", 
                 "image": "~/.config/radiotray-ng/bookmark_icons/ibr", 
-                "name": "Indie Brew"
+                "name": "Indie Brew Radio"
             }, 
             {
                 "url": "http://pr320.pinguinradio.com/listen.pls", 
