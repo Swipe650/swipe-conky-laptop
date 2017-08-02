@@ -11,7 +11,7 @@ own_window_type dock
 own_window_transparent no
 own_window_argb_visual yes
 #own_window_argb_value 60
-own_window_argb_value 120
+own_window_argb_value 100
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 #own_window_hints decorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
@@ -28,8 +28,8 @@ default_shade_color red
 default_outline_color green
 alignment top_right
 #alignment bottom_right
-gap_x 10
-gap_y 10
+gap_x 9
+gap_y 9
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -38,15 +38,15 @@ override_utf8_locale yes
 #use_spacer no
  
 TEXT
-${alignc -10}${font Open Sans:Bold:size=20}${color dodgerblue3}Arch ${color}Linux$font$color
-#${alignc -10}${image ~/.conky/ant -p 5,10 -s 40x40 -f 1}${font Open Sans:size=20}${color dodgerblue3}Arch ${color}Linux$font$color
+${alignc -10}${font Open Sans:Bold:size=20}${color #FFC433}Arch ${color}Linux$font$color
+#${alignc -10}${image ~/.conky/ant -p 5,10 -s 40x40 -f 1}${font Open Sans:size=20}${color #FFC433}Arch ${color}Linux$font$color
 
-${voffset -10}${color dodgerblue3}${font Open Sans:Bold:size=10}DATE ${voffset -1}${hr 6}$color$font
+${voffset -10}${color #FFC433}${font Open Sans:Bold:size=10}DATE ${voffset -1}${hr 6}$color$font
 ${voffset 4}$color${font Open Sans:size=12}${time %A}, ${time %d %B %Y}$font$color
 ${voffset 4}$color${font}${font Open Sans:bold:size=15}$alignr${voffset -27}${time %H:%M}$font
 
 # SYSTEM
-${voffset -12}${font Open Sans:Bold:size=10}${color dodgerblue3}SYSTEM ${voffset -1}${hr 6}$color${font}
+${voffset -12}${font Open Sans:Bold:size=10}${color #FFC433}SYSTEM ${voffset -1}${hr 6}$color${font}
 ${voffset -8}
 $sysname $kernel $alignr $machine
 Uptime: $alignr $uptime
@@ -54,12 +54,12 @@ Uptime: $alignr $uptime
 System Temp: $alignr ${execi 30 sensors | grep 'temp1:' | cut -c16-17}°C
 
 # MEMORY
-${voffset -12}${font Open Sans:Bold:size=10}${color dodgerblue3}MEMORY ${voffset 3}$color${membar 4}
+${voffset -12}${font Open Sans:Bold:size=10}${color #FFC433}MEMORY ${voffset 3}$color${membar 4}
 $color${font Open Sans:bold:size=8.5}Used:$font $mem of $memmax$alignr$memperc%
 $color${font Open Sans:bold:size=8.5}Free:$font $memeasyfree
 $color${font Open Sans:bold:size=8.5}Buffers / Cached:$font$alignr$buffers / $cached
 
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ----------------------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -4}CPU${color}${font}${voffset -2} --
+${voffset -8}${font Open Sans:Bold:size=10}${color #FFC433}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ----------------------------------------- ${font Open Sans:Bold:size=10}${color #FFC433}${voffset -2}RAM${color}${font}${voffset -1} ------- ${font Open Sans:Bold:size=10}${color #FFC433}${voffset -4}CPU${color}${font}${voffset -2} --
 
 ${voffset -8}${top_mem name 1}${alignr}${top_mem cpu 1} %
 ${voffset -13}${alignr}${offset -60}${top_mem mem 1} %
@@ -70,21 +70,21 @@ ${voffset -13}${alignr}${offset -60}${top_mem mem 3} %
 ${top_mem name 4}${alignr}${top_mem cpu 4} %
 ${voffset -13}${alignr}${offset -60}${top_mem mem 4} %
 
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}SWAP ${voffset 3}$color${swapbar 4}
+${voffset -8}${font Open Sans:Bold:size=10}${color #FFC433}SWAP ${voffset 3}$color${swapbar 4}
 $color${font Open Sans:bold:size=8.5}Used:$font $swap of $swapmax$alignr$swapperc%
 $color${font Open Sans:bold:size=8.5}Free:$font $swapfree
 
 # CPU
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}CPU ${voffset 3}$color${cpubar 4}
+${voffset -8}${font Open Sans:Bold:size=10}${color #FFC433}CPU ${voffset 3}$color${cpubar 4}
 $color${font}Intel Core2 Duo T7500 @ ${freq_g cpu0}GHz $alignr $cpu%
 #@ ${execi 2 sensors | grep 'Physical id 0' | cut -c16-21}°C
 ${font}Core 0 - ${execi 2 sensors | grep 'Core 0' | cut -c16-21}°C ${alignc 60}${cpubar cpu1}${color}
 ${font}Core 1 - ${execi 2 sensors | grep 'Core 1' | cut -c16-21}°C ${alignc 60}${cpubar cpu2}${color}
-#${font}Core 2 - ${execi 2 sensors | grep 'Core 0' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu3}${color}
-#${font}Core 3 - ${execi 2 sensors | grep 'Core 1' | cut -c18-19}°C ${alignc 60}${color dodgerblue3}${cpubar cpu4}${color}
+#${font}Core 2 - ${execi 2 sensors | grep 'Core 0' | cut -c18-19}°C ${alignc 60}${color #FFC433}${cpubar cpu3}${color}
+#${font}Core 3 - ${execi 2 sensors | grep 'Core 1' | cut -c18-19}°C ${alignc 60}${color #FFC433}${cpubar cpu4}${color}
 #${font}CPU Fan Speed - ${execi 2 sensors | grep 'fan0' | cut -c24-31} ${alignc 60}
 
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ----------------------------------------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -2}RAM${color}${font}${voffset -1} ------- ${font Open Sans:Bold:size=10}${color dodgerblue3}${voffset -4}CPU${color}${font}${voffset -2} --
+${voffset -8}${font Open Sans:Bold:size=10}${color #FFC433}${voffset -2}TOP PROCESSES${color}${font}${voffset -1} ----------------------------------------- ${font Open Sans:Bold:size=10}${color #FFC433}${voffset -2}RAM${color}${font}${voffset -1} ------- ${font Open Sans:Bold:size=10}${color #FFC433}${voffset -4}CPU${color}${font}${voffset -2} --
 
 ${voffset -8}#${hr 1}
 ${top name 1}${alignr}${top cpu 1} %
@@ -99,42 +99,34 @@ ${voffset -13}${alignr}${offset -60}${top mem 4} %
 #${voffset -13}${alignr}${offset -60}${top mem 5} %
 
 # NETWORK
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}NETWORK ${voffset -1}${hr 6}
-#$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 60 curl http://ip.tupeux.com --connect-timeout 2 | 
-#grep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"}$font
-#$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 sh /home/swipe/.conky/IP.sh}$font
+${voffset -8}${font Open Sans:Bold:size=10}${color #FFC433}NETWORK ${voffset -1}${hr 6}
 $color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 360 curl ifconfig.co}$font 
 
-${voffset -28}$alignc${execpi 4 echo "\${font Open Sans:bold:size=8.5}\${color #66aaff}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
-#${voffset -10}${font Open Sans:bold:size=8.5}Ethernet $font$alignr ${addr enp0s25}
-#↑ ${upspeedf enp0s25} kb/s $alignr ${totalup enp0s25}
-#${voffset -14}$alignc${upspeedgraph enp0s25 10,120  000000 aaddff}
-#↓ ${downspeedf enp0s25} kb/s $alignr ${totaldown enp0s25}
-#${voffset -14}$alignc${downspeedgraph enp0s25 10,120  000000 66aaff}
+${voffset -28}$alignc${execpi 4 echo "\${font Open Sans:bold:size=8.5}\${color #FFC433}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color } ms"}
 
 ${voffset -10}${font Open Sans:bold:size=8.5}WiFi $font${wireless_bitrate wlp16s0} $alignr ${addr wlp16s0}
 ${voffset -14}$alignc${wireless_essid wlp16s0}
 ${voffset -8}
-Signal: $alignc${wireless_link_bar 4,260 wlp16s0}
+Signal: $alignc${wireless_link_bar 4,290 wlp16s0}
 ${voffset -8}
 ↑ ${upspeedf wlp16s0} kb/s $alignr ${totalup wlp16s0}
-${voffset -14}$alignc${upspeedgraph wlp16s0 10,120 000000 aaddff}
+${voffset -14}$alignc${upspeedgraph wlp16s0 10,120 000000 FFDEA9}
 ↓ ${downspeedf wlp16s0} kb/s $alignr ${totaldown wlp16s0}
-${voffset -14}$alignc${downspeedgraph wlp16s0 10,120 000000 66aaff}
+${voffset -14}$alignc${downspeedgraph wlp16s0 10,120 000000 FFDEA9}
 
 # HDD
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}DISCS ${voffset -1}${hr 6}
+${voffset -8}${font Open Sans:Bold:size=10}${color #FFC433}DISCS ${voffset -1}${hr 6}
 ${voffset -14}
-$color${font Open Sans:bold:size=9}/dev/sda${font Open Sans:size=8.5}${alignc -50}${color} write: ${color 66aaff}${font Open Sans:bold:size=8.5}${diskio_write /dev/sda}${color}$alignr ${font Open Sans:size=8.5}$alignr read: ${color 66aaff}${font Open Sans:bold:size=8.5}$alignr${diskio_read /dev/sda}
+$color${font Open Sans:bold:size=9}/dev/sda${font Open Sans:size=8.5}${alignc -50}${color} write: ${color #FFC433}${font Open Sans:bold:size=8.5}${diskio_write /dev/sda}${color}$alignr ${font Open Sans:size=8.5}$alignr read: ${color #FFC433}${font Open Sans:bold:size=8.5}$alignr${diskio_read /dev/sda}
 ${voffset -8}
 $color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}Root Partition:$font${alignr -5}${fs_used /} / ${fs_size /} 
 $color${font Open Sans:size=8.5}${voffset 3}Used:  ${voffset 3}$alignr${fs_bar 4, 245 /} ${voffset -3}${fs_used_perc /}%
 #${voffset -8}
 #$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}HOME$font${alignc -20}${fs_used /home} / ${fs_size /home}$alignr${fs_used_perc /home} %
-#${color aaddff}write: ${diskio_write /dev/sda}${color 66aaff}${alignc -20} read:${diskio_read /dev/sda} $color$alignr $fs_type /home}
+#${color aaddff}write: ${diskio_write /dev/sda}${color #FFC433}${alignc -20} read:${diskio_read /dev/sda} $color$alignr $fs_type /home}
 #${fs_bar /home}
 
 # BATTERY
-${voffset -8}${font Open Sans:Bold:size=10}${color dodgerblue3}BATTERY ${voffset -1}${hr 6}
+${voffset -8}${font Open Sans:Bold:size=10}${color #FFC433}BATTERY ${voffset -1}${hr 6}
 $color${font Open Sans:size=8.5}Status: ${voffset 3} $alignr${battery_bar 4,245 C23B} ${voffset -3}${battery_percent C23B}%
-${voffset -215}
+${voffset -213}
