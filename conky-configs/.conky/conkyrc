@@ -38,7 +38,7 @@ override_utf8_locale yes
 #use_spacer no
  
 TEXT
-${alignc -10}${font Open Sans:Bold:size=20}${color #FFC433}Arch ${color}Linux$font$color
+${voffset -4}${alignc -10}${font Open Sans:Bold:size=20}${color #FFC433}Arch ${color}Linux$font$color
 #${alignc -10}${image ~/.conky/ant -p 5,10 -s 40x40 -f 1}${font Open Sans:size=20}${color #FFC433}Arch ${color}Linux$font$color
 
 ${voffset -14}${color #FFC433}${font Open Sans:Bold:size=10}DATE ${voffset -1}${hr 6}$color$font
@@ -78,8 +78,8 @@ $color${font Open Sans:bold:size=8.5}Free:$font $swapfree
 ${voffset -12}${font Open Sans:Bold:size=10}${color #FFC433}CPU ${voffset 3}$color${cpubar 4}
 $color${font}Intel Core2 Duo T7500 @ ${freq_g cpu0}GHz $alignr $cpu%
 #@ ${execi 2 sensors | grep 'Physical id 0' | cut -c16-21}°C
-${font}Core 0 - ${execi 2 sensors | grep 'Core 0' | cut -c16-21}°C ${alignc 60}${cpubar cpu1}${color}
-${font}Core 1 - ${execi 2 sensors | grep 'Core 1' | cut -c16-21}°C ${alignc 60}${cpubar cpu2}${color}
+${font}Core 0 - ${execi 2 sensors | grep 'Core 0' | cut -c16-21}C ${alignc 60}${cpubar cpu1}${color}
+${font}Core 1 - ${execi 2 sensors | grep 'Core 1' | cut -c16-21}C ${alignc 60}${cpubar cpu2}${color}
 #${font}Core 2 - ${execi 2 sensors | grep 'Core 0' | cut -c18-19}°C ${alignc 60}${color #FFC433}${cpubar cpu3}${color}
 #${font}Core 3 - ${execi 2 sensors | grep 'Core 1' | cut -c18-19}°C ${alignc 60}${color #FFC433}${cpubar cpu4}${color}
 #${font}CPU Fan Speed - ${execi 2 sensors | grep 'fan0' | cut -c24-31} ${alignc 60}
@@ -109,9 +109,9 @@ ${voffset -14}$alignc${wireless_essid wlp16s0}
 ${voffset -9}
 Signal: $alignc${wireless_link_bar 4,290 wlp16s0}
 ${voffset -9}
-↑ ${upspeedf wlp16s0} kb/s $alignr ${totalup wlp16s0}
+TX ${upspeedf wlp16s0} kb/s $alignr ${totalup wlp16s0}
 ${voffset -14}$alignc${upspeedgraph wlp16s0 10,120 000000 FFDEA9}
-↓ ${downspeedf wlp16s0} kb/s $alignr ${totaldown wlp16s0}
+RX ${downspeedf wlp16s0} kb/s $alignr ${totaldown wlp16s0}
 ${voffset -14}$alignc${downspeedgraph wlp16s0 10,120 000000 FFDEA9}
 
 # HDD
@@ -129,4 +129,4 @@ $color${font Open Sans:size=8.5}${voffset 3}Used:  ${voffset 3}$alignr${fs_bar 4
 # BATTERY
 ${voffset -14}${font Open Sans:Bold:size=10}${color #FFC433}BATTERY ${voffset -1}${hr 6}
 $color${font Open Sans:size=8.5}Status: ${voffset 3} $alignr${battery_bar 4,245 C23B} ${voffset -3}${battery_percent C23B}%
-${voffset -280}
+${voffset -283}
