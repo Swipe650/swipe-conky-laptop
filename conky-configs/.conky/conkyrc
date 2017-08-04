@@ -108,10 +108,10 @@ ${voffset -18}${font Open Sans:bold:size=8.5}WiFi $font${wireless_bitrate wlp16s
 ${voffset -14}$alignc${wireless_essid wlp16s0}
 ${voffset -9}
 Signal: $alignc${wireless_link_bar 4,290 wlp16s0}
-${voffset -9}
-TX ${upspeedf wlp16s0} kb/s $alignr ${totalup wlp16s0}
+${voffset -18}
+${font Noto Sans:Bold:size=12}↑ $font${upspeedf wlp16s0} kb/s $alignr ${totalup wlp16s0}
 ${voffset -14}$alignc${upspeedgraph wlp16s0 10,120 000000 FFDEA9}
-RX ${downspeedf wlp16s0} kb/s $alignr ${totaldown wlp16s0}
+${font Noto Sans:Bold:size=12}↓ $font${downspeedf wlp16s0} kb/s $alignr ${totaldown wlp16s0}
 ${voffset -14}$alignc${downspeedgraph wlp16s0 10,120 000000 FFDEA9}
 
 # HDD
@@ -129,4 +129,4 @@ $color${font Open Sans:size=8.5}${voffset 3}Used:  ${voffset 3}$alignr${fs_bar 4
 # BATTERY
 ${voffset -14}${font Open Sans:Bold:size=10}${color #FFC433}BATTERY ${voffset -1}${hr 6}
 $color${font Open Sans:size=8.5}Status: ${voffset 3} $alignr${battery_bar 4,245 C23B} ${voffset -3}${battery_percent C23B}%
-${voffset -283}
+${voffset -289}
