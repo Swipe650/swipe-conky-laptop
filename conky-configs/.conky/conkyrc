@@ -108,10 +108,10 @@ ${voffset -18}${font Open Sans:bold:size=8.5}WiFi $font${wireless_bitrate wlp16s
 ${voffset -14}$alignc${wireless_essid wlp16s0}
 ${voffset -9}
 Signal: $alignc${wireless_link_bar 4,290 wlp16s0}
-${voffset -18}
-${font Noto Sans:Bold:size=12}↑ $font${upspeedf wlp16s0} kb/s $alignr ${totalup wlp16s0}
+${voffset -13}
+${font Noto Sans:Bold:size=10}↑ $font${upspeedf wlp16s0} kb/s $alignr ${totalup wlp16s0}
 ${voffset -14}$alignc${upspeedgraph wlp16s0 10,120 000000 FFDEA9}
-${font Noto Sans:Bold:size=12}↓ $font${downspeedf wlp16s0} kb/s $alignr ${totaldown wlp16s0}
+${font Noto Sans:Bold:size=10}↓ $font${downspeedf wlp16s0} kb/s $alignr ${totaldown wlp16s0}
 ${voffset -14}$alignc${downspeedgraph wlp16s0 10,120 000000 FFDEA9}
 
 # HDD
